@@ -41,8 +41,6 @@ export class ClienteModalComponent implements OnInit {
         })
       })
     }
-
-  
     this.cerrar();
   }
 
