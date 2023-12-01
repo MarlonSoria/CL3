@@ -1,0 +1,36 @@
+<mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="nombre" [(ngModel)]="docente.nombre">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Dni</mat-label>
+    <input matInput placeholder="dni" [(ngModel)]="docente.dni" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Sueldo</mat-label>
+    <input matInput placeholder="sueldo" [(ngModel)]="docente.sueldo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="email" [(ngModel)]="docente.email">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Sexo</mat-label>
+    <input matInput placeholder="sexo" [(ngModel)]="docente.sexo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label *ngIf="docente.categoria"  >{{docente.categoria.nombrecate}}</mat-label>
+    <mat-select matInput placeholder="seleccione categoria" [(ngModel)]="docente.categoria" >
+      <mat-option *ngFor="let c of categoria" [value]="c">
+        {{c.nombrecate}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="aceptar()">
+    Aceptar
+</button>
+
+<button mat-button color="primary" (click)="cerrar()">
+    Cancelar
+</button>
